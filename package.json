@@ -5,7 +5,9 @@
   "main": "lib/index.js",
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "src",
+    ".babelrc"
   ],
   "scripts": {
     "build": "babel src -d lib",
@@ -17,7 +19,8 @@
     "pretest": "npm run lint -- --cache",
     "test": "jest",
     "ci": "npm test -- --coverage --verbose && npm run integration",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -66,16 +69,16 @@
     "write-file-atomic": "^2.3.0",
     "write-json-file": "^2.2.0",
     "write-pkg": "^3.1.0",
-    "yargs": "^8.0.2"
+    "yargs": "^8.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.0"
   },
   "bin": {
     "lerna": "./bin/lerna.js"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^7.2.3",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.6.0",
     "eslint": "^4.5.0",
     "eslint-config-babel": "^7.0.2",
     "eslint-plugin-babel": "^4.1.2",
